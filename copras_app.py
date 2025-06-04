@@ -18,7 +18,7 @@ df.rename(columns={
 brand_options = sorted(df["Brand"].unique())
 
 # Sidebar input
-st.sidebar.title("ðŸ”§ Filter & Bobot Kriteria")
+st.sidebar.title("Filter & Bobot Kriteria")
 
 
 min_ram = st.sidebar.slider("Minimum RAM (GB)", 2, 64, 8, step=2)
@@ -27,7 +27,7 @@ min_prosesor = st.sidebar.slider("Minimum Prosesor (GHz)", 0.5, 5.0, 1.5, step=0
 max_harga = st.sidebar.slider("Maximum Harga (â‚¬)", 100, 5000, 1000, step=50)
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("ðŸ“Š Bobot Kriteria (Total harus = 1.0)")
+st.sidebar.subheader("Bobot Kriteria (Total harus = 1.0)")
 w_harga = st.sidebar.slider("Bobot Harga", 0.0, 1.0, 0.4, step=0.05)
 w_ram = st.sidebar.slider("Bobot RAM", 0.0, 1.0, 0.2, step=0.05)
 w_storage = st.sidebar.slider("Bobot Storage", 0.0, 1.0, 0.2, step=0.05)
@@ -75,6 +75,6 @@ else:
         df_filtered["Ranking"] = df_filtered["Q"].rank(ascending=False).astype(int)
 
         # Output
-        st.subheader("ðŸŽ¯ Rekomendasi Laptop Berdasarkan COPRAS")
+        st.subheader("Rekomendasi Laptop Berdasarkan COPRAS")
         df_result = df_filtered[["Brand", "Laptop", "Q", "Ranking"]].sort_values(by="Q", ascending=False)
         st.dataframe(df_result.reset_index(drop=True))
