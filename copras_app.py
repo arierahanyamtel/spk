@@ -24,7 +24,7 @@ st.sidebar.title("Filter & Bobot Kriteria")
 min_ram = st.sidebar.slider("Minimum RAM (GB)", 2, 64, 8, step=2)
 min_storage = st.sidebar.slider("Minimum Storage (GB)", 64, 2048, 128, step=128)
 min_prosesor = st.sidebar.slider("Minimum Prosesor (GHz)", 0.5, 5.0, 1.5, step=0.1)
-max_harga = st.sidebar.slider("Maximum Harga (â‚¬)", 100, 5000, 1000, step=50)
+max_harga = st.sidebar.slider("Maximum Harga (€)", 100, 5000, 1000, step=50)
 
 st.sidebar.markdown("---")
 st.sidebar.subheader("Bobot Kriteria (Total harus = 1.0)")
